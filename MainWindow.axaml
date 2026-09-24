@@ -4,6 +4,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="drugieokno.MainWindow"
-        Title="drugieokno">
-    <TextBlock Text="Warsztat" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        Title="drugieokno"
+        Width="800" Height="450">
+    <Grid>
+        <!-- Gentle low-contrast checkerboard, filled from code-behind -->
+        <Grid x:Name="CheckerBoard" />
+
+        <!-- Readable centered panel -->
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center"
+                Background="#F2FFFFFF" CornerRadius="12" Padding="24,16">
+            <StackPanel Spacing="12" HorizontalAlignment="Center">
+                <TextBlock x:Name="MovingText"
+                           Text="Warsztat"
+                           FontSize="32" FontWeight="Bold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Minimal pause control — required for auto-playing motion (WCAG 2.2.2).
+             Kept small in corner instead of center. -->
+        <Button x:Name="AnimationToggleButton"
+                Content="Stop"
+                FontSize="11" Opacity="0.6"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Margin="0,0,12,12"
+                Click="OnToggleAnimationClick"/>
+    </Grid>
 </Window>

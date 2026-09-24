@@ -1,0 +1,1 @@
+Prośba: Make the app's background a colored checkboard pattern which shall be very eye-searingly bright and flash quite fast on you. The text should jump around.
