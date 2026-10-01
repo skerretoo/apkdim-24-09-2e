@@ -32,3 +32,4 @@ Wymaga .NET 9.0.
 3. Zwiększono gęstość szachownicy z 8x12 do 12x16 dla drobniejszego wzoru.
 4. Wymuszono bezpieczny minimalny interwał migotania 1,0 s (strażnik WCAG 2.3.1).
 5. Zbuforowano pędzle szachownicy zamiast alokować je przy każdym odświeżeniu.
+6. Wydzielono paletę szachownicy do osobnej klasy CheckerboardTheme.

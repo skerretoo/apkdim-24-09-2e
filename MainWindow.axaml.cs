@@ -11,18 +11,6 @@ public partial class MainWindow : Window
     private const int Rows = 12;
     private const int Cols = 16;
 
-    // Muted, low-contrast palettes — deliberately NOT eye-searing, no saturated red.
-    private static readonly Color PaletteA1 = Color.Parse("#7FB3B0"); // muted teal
-    private static readonly Color PaletteA2 = Color.Parse("#E8E0D0"); // warm light beige
-    private static readonly Color PaletteB1 = Color.Parse("#8AB8D1"); // muted blue-gray
-    private static readonly Color PaletteB2 = Color.Parse("#D9D5C9"); // light warm gray
-
-    // Cached brushes: avoid allocating ~192 brushes on every tick.
-    private static readonly SolidColorBrush BrushA1 = new(PaletteA1);
-    private static readonly SolidColorBrush BrushA2 = new(PaletteA2);
-    private static readonly SolidColorBrush BrushB1 = new(PaletteB1);
-    private static readonly SolidColorBrush BrushB2 = new(PaletteB2);
-
     private readonly Border[,] _cells = new Border[Rows, Cols];
     private readonly DispatcherTimer _boardTimer;
     private readonly DispatcherTimer _motionTimer;
@@ -80,8 +68,7 @@ public partial class MainWindow : Window
 
     private void ApplyPalette(bool alternate)
     {
-        var brush1 = alternate ? BrushB1 : BrushA1;
-        var brush2 = alternate ? BrushB2 : BrushA2;
+        var (brush1, brush2) = CheckerboardTheme.GetBrushes(alternate);
 
         for (var r = 0; r < Rows; r++)
         {
