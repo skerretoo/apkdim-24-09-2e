@@ -36,3 +36,4 @@ Wymaga .NET 9.0.
 7. Dodano podtytuł wyjaśniający bezpieczny tryb animacji.
 8. Dodano obwiednię panelu dla lepszego kontrastu czytelności.
 9. Dodano wskaźnik statusu animacji w lewym dolnym rogu.
+10. Dodano wybór bezpiecznej prędkości animacji (1,2 s / 2,0 s, z limitem).

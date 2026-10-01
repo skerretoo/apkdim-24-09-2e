@@ -93,6 +93,15 @@ public partial class MainWindow : Window
     private static TimeSpan GetSafeInterval(TimeSpan requested)
         => requested < MinSafeInterval ? MinSafeInterval : requested;
 
+    private void OnSpeedSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (!IsLoaded) return;
+        var requested = SpeedSelector.SelectedIndex == 1
+            ? TimeSpan.FromSeconds(2.0)
+            : BoardInterval;
+        _boardTimer.Interval = GetSafeInterval(requested);
+    }
+
     private void OnToggleAnimationClick(object? sender, RoutedEventArgs e)
     {
         _animationEnabled = !_animationEnabled;
