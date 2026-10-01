@@ -8,8 +8,8 @@ namespace drugieokno;
 
 public partial class MainWindow : Window
 {
-    private const int Rows = 8;
-    private const int Cols = 12;
+    private const int Rows = 12;
+    private const int Cols = 16;
 
     // Muted, low-contrast palettes — deliberately NOT eye-searing, no saturated red.
     private static readonly Color PaletteA1 = Color.Parse("#7FB3B0"); // muted teal
