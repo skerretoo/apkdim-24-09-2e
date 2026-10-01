@@ -22,6 +22,10 @@ public partial class MainWindow : Window
     private readonly DispatcherTimer _motionTimer;
     private readonly DateTime _motionStart = DateTime.Now;
 
+    // WCAG 2.3.1 guard: never flash faster than 1 Hz (min 1.0 s interval).
+    private static readonly TimeSpan BoardInterval = TimeSpan.FromSeconds(1.2);
+    private static readonly TimeSpan MinSafeInterval = TimeSpan.FromSeconds(1.0);
+
     private bool _showAlternate;
     private bool _animationEnabled = true;
 
@@ -32,7 +36,7 @@ public partial class MainWindow : Window
         ApplyPalette(false);
 
         // Slow toggle: 1.2 s interval ≈ 0.4 Hz, well below WCAG 3-flashes-per-second limit.
-        _boardTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1.2) };
+        _boardTimer = new DispatcherTimer { Interval = GetSafeInterval(BoardInterval) };
         _boardTimer.Tick += (_, _) =>
         {
             _showAlternate = !_showAlternate;
@@ -92,6 +96,9 @@ public partial class MainWindow : Window
         var y = 8.0 * Math.Sin(t * 3.1);
         MovingText.RenderTransform = new TranslateTransform(x, y);
     }
+
+    private static TimeSpan GetSafeInterval(TimeSpan requested)
+        => requested < MinSafeInterval ? MinSafeInterval : requested;
 
     private void OnToggleAnimationClick(object? sender, RoutedEventArgs e)
     {
