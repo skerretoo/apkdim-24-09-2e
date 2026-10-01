@@ -41,3 +41,4 @@ Wymaga .NET 9.0.
 12. Dodano podpowiedzi i kolejność tabulacji dla obsługi klawiatury.
 13. Dodano baner zgodności WCAG z informacją o pauzie.
 14. Dodano metadane pakietu (wersja, autorzy, opis) do csproj.
+15. Dodano EditorConfig dla spójnego formatowania kodu.
