@@ -38,3 +38,4 @@ Wymaga .NET 9.0.
 9. Dodano wskaźnik statusu animacji w lewym dolnym rogu.
 10. Dodano wybór bezpiecznej prędkości animacji (1,2 s / 2,0 s, z limitem).
 11. Dodano skrót klawiatury Spacja do wstrzymywania/wznawiania animacji.
+12. Dodano podpowiedzi i kolejność tabulacji dla obsługi klawiatury.
