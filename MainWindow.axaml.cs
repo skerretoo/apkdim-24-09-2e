@@ -17,6 +17,12 @@ public partial class MainWindow : Window
     private static readonly Color PaletteB1 = Color.Parse("#8AB8D1"); // muted blue-gray
     private static readonly Color PaletteB2 = Color.Parse("#D9D5C9"); // light warm gray
 
+    // Cached brushes: avoid allocating ~192 brushes on every tick.
+    private static readonly SolidColorBrush BrushA1 = new(PaletteA1);
+    private static readonly SolidColorBrush BrushA2 = new(PaletteA2);
+    private static readonly SolidColorBrush BrushB1 = new(PaletteB1);
+    private static readonly SolidColorBrush BrushB2 = new(PaletteB2);
+
     private readonly Border[,] _cells = new Border[Rows, Cols];
     private readonly DispatcherTimer _boardTimer;
     private readonly DispatcherTimer _motionTimer;
@@ -74,15 +80,15 @@ public partial class MainWindow : Window
 
     private void ApplyPalette(bool alternate)
     {
-        var color1 = alternate ? PaletteB1 : PaletteA1;
-        var color2 = alternate ? PaletteB2 : PaletteA2;
+        var brush1 = alternate ? BrushB1 : BrushA1;
+        var brush2 = alternate ? BrushB2 : BrushA2;
 
         for (var r = 0; r < Rows; r++)
         {
             for (var c = 0; c < Cols; c++)
             {
                 var isEven = (r + c) % 2 == 0;
-                _cells[r, c].Background = new SolidColorBrush(isEven ? color1 : color2);
+                _cells[r, c].Background = isEven ? brush1 : brush2;
             }
         }
     }
