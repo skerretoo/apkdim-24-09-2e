@@ -54,5 +54,11 @@
             <ComboBoxItem Content="Wolno (1,2 s)"/>
             <ComboBoxItem Content="Bardzo wolno (2,0 s)"/>
         </ComboBox>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Top"
+                Background="#E6FFFFFF" CornerRadius="8" Padding="12,6" Margin="0,8,0,0">
+            <TextBlock Text="Migotanie &lt; 1 Hz • Wstrzymaj spacją (WCAG 2.2.2 / 2.3.1)"
+                       FontSize="11" Opacity="0.7"
+                       HorizontalAlignment="Center"/>
+        </Border>
     </Grid>
 </Window>

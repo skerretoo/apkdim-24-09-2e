@@ -39,3 +39,4 @@ Wymaga .NET 9.0.
 10. Dodano wybór bezpiecznej prędkości animacji (1,2 s / 2,0 s, z limitem).
 11. Dodano skrót klawiatury Spacja do wstrzymywania/wznawiania animacji.
 12. Dodano podpowiedzi i kolejność tabulacji dla obsługi klawiatury.
+13. Dodano baner zgodności WCAG z informacją o pauzie.
