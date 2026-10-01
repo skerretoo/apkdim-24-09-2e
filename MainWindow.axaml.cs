@@ -1,5 +1,6 @@
 using System;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Threading;
@@ -42,6 +43,8 @@ public partial class MainWindow : Window
         _motionTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _motionTimer.Tick += (_, _) => UpdateTextPosition();
         _motionTimer.Start();
+
+        KeyDown += OnWindowKeyDown;
     }
 
     private void BuildBoard()
@@ -103,6 +106,18 @@ public partial class MainWindow : Window
     }
 
     private void OnToggleAnimationClick(object? sender, RoutedEventArgs e)
+        => ToggleAnimation();
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Space)
+        {
+            ToggleAnimation();
+            e.Handled = true;
+        }
+    }
+
+    private void ToggleAnimation()
     {
         _animationEnabled = !_animationEnabled;
         if (_animationEnabled)
