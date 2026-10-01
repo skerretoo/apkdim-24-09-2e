@@ -101,6 +101,7 @@ public partial class MainWindow : Window
             _boardTimer.Start();
             _motionTimer.Start();
             AnimationToggleButton.Content = "Stop";
+            StatusText.Text = "Animacja: włączona • 0,4 Hz (bezpiecznie)";
         }
         else
         {
@@ -108,6 +109,7 @@ public partial class MainWindow : Window
             _motionTimer.Stop();
             MovingText.RenderTransform = new TranslateTransform(0, 0);
             AnimationToggleButton.Content = "Start";
+            StatusText.Text = "Animacja: wstrzymana";
         }
     }
 }

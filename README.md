@@ -35,3 +35,4 @@ Wymaga .NET 9.0.
 6. Wydzielono paletę szachownicy do osobnej klasy CheckerboardTheme.
 7. Dodano podtytuł wyjaśniający bezpieczny tryb animacji.
 8. Dodano obwiednię panelu dla lepszego kontrastu czytelności.
+9. Dodano wskaźnik statusu animacji w lewym dolnym rogu.

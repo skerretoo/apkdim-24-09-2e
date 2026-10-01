@@ -36,5 +36,10 @@
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"
                 Margin="0,0,12,12"
                 Click="OnToggleAnimationClick"/>
+        <TextBlock x:Name="StatusText"
+                   Text="Animacja: włączona • 0,4 Hz (bezpiecznie)"
+                   FontSize="11" Opacity="0.6"
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                   Margin="12,0,0,12"/>
     </Grid>
 </Window>
