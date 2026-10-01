@@ -20,6 +20,10 @@
                            Text="Warsztat"
                            FontSize="32" FontWeight="Bold"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="SubtitleText"
+                           Text="Tryb bezpieczny: spokojne kolory i wolny ruch"
+                           FontSize="13" Opacity="0.75"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Border>
 

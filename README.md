@@ -33,3 +33,4 @@ Wymaga .NET 9.0.
 4. Wymuszono bezpieczny minimalny interwał migotania 1,0 s (strażnik WCAG 2.3.1).
 5. Zbuforowano pędzle szachownicy zamiast alokować je przy każdym odświeżeniu.
 6. Wydzielono paletę szachownicy do osobnej klasy CheckerboardTheme.
+7. Dodano podtytuł wyjaśniający bezpieczny tryb animacji.
