@@ -28,3 +28,4 @@ Wymaga .NET 9.0.
 ## Zmiany
 
 1. Uporządkowano README: opis, bezpieczeństwo, uruchamianie i lista zmian.
+2. Ustawiono opisowy tytuł okna oraz minimalny rozmiar i centrowanie przy starcie.
