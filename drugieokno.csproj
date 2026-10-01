@@ -4,6 +4,9 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.1.0</Version>
+    <Authors>Warsztat</Authors>
+    <Description>Bezpieczna szachownica Avalonia z wolną animacją zgodną z WCAG.</Description>
   </PropertyGroup>
 
   <ItemGroup>
