@@ -14,7 +14,8 @@
 
         <!-- Readable centered panel -->
         <Border HorizontalAlignment="Center" VerticalAlignment="Center"
-                Background="#F2FFFFFF" CornerRadius="12" Padding="24,16">
+                Background="#F2FFFFFF" CornerRadius="12" Padding="24,16"
+                BorderBrush="#33000000" BorderThickness="1">
             <StackPanel Spacing="12" HorizontalAlignment="Center">
                 <TextBlock x:Name="MovingText"
                            Text="Warsztat"
